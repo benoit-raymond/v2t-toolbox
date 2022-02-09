@@ -130,3 +130,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+v2t-toolbox.code-workspace
+.gitignore
