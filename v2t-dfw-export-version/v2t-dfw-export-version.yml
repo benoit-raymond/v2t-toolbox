@@ -1,0 +1,6 @@
+# hosts => list of ESXi hosts (IPs or FQDN). MANDATORY
+hosts:
+  - 192.168.20.4
+  - 192.168.20.3
+# user => username to connect to ESXi hosts. MANDATORY
+user: root

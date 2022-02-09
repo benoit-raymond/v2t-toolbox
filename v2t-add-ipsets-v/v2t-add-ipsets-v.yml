@@ -1,0 +1,6 @@
+# nsx-v => FQDN or IP of NSX-v Manager. MANDATORY
+nsx-v: nsx-l-02a.corp.local
+# user => username to connect to NSX Manager API. MANDATORY
+user: admin
+# scope => NSX-v scope (default NSX-v = globalroot-0). MANDATORY
+scope: "globalroot-0"
