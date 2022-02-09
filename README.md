@@ -1,6 +1,8 @@
 # v2t-toolbox
 NSX v2t Custom toolbox
 
+>**WARNING**: Experimental ! Use with *CAUTION*.
+
 ## Tool DFW Export version
 - usage: `python3 v2t-dfw-export-version.py [--help] [--set|-s] [--input|-i </path/file.yml>]`
 - objective: Check ESXi hosts DFW Export version is set to 1000. Default mode is check-only. Use --set option to set DFW export version to 1000. 
