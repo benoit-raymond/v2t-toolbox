@@ -107,7 +107,7 @@ def main():
                     print("## "+bcolors.WARNING+"ACTION REQUIRED "+bcolors.ENDC+"=> DFW Export version = "+ dfw_export_version +" (NIC-Name ="+ nic_id+")")
                 if dfw_export_version != "1000" and args.set:
                     # DFW export version not 1000 AND script mode is set to modify the value
-                    stdin, stdout, stderr = ssh_stream.exec_command(command_setexport + "nic_id")
+                    stdin, stdout, stderr = ssh_stream.exec_command(command_setexport + nic_id)
                     # Verify DFW export version successfullu modified
                     stdin, stdout, stderr = ssh_stream.exec_command(command_getexport+ nic_id)
                     res = stdout.readlines()
