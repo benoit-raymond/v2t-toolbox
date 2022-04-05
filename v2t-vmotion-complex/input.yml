@@ -1,8 +1,10 @@
 # list => list of VMs to move in this wave. MANDATORY
 list:
+  # List of vm
   - vm:
+    # networks => List of Destination network, must match number of VM vNICs in VM's HW ordering
     networks: [VLAN1, VLAN3]
-    datastore: DS01
+    # name => VM name
     name: VM1
   - vm:
     networks: [VLAN2, VLAN3]
@@ -13,5 +15,7 @@ src_vcenter: vc-l-01a.corp.local
 user: administrator@vsphere.local
 # dst_vcenter => FQDN/IP Destination vCenter. MANDATORY
 dst_vcenter: vc-l-01a.corp.local
-# cluster => ESXi destination Cluster name. MANDATORY
+# cluster => ESXi destination Cluster name. OPTION
 cluster: CLS01A
+# datastore => Datastore destination Cluster name. MANDATORY
+datastore: DS01

@@ -55,25 +55,28 @@ def main():
     src_vcenter = input_yaml['src_vcenter']
     dst_vcenter = input_yaml['dst_vcenter']
     cluster = input_yaml['cluster']
+    datastore = input_yaml['datastore']
     user = input_yaml['user']
-
+    
     # Ask user password
     print ("user: "+user)
     password = getpass()
+    print ("\n")
 
-    # Parse the list of VMs in YAML input file (= list of VM for this wave)
+    # Parse the list of VMs in YAML input file (= list of VM for this wave) and start vmotion for each VM
+    print ("START VMs vMotion ...\n")
     vm_list = input_yaml['list']
     for vm in vm_list:
-        print ("# VM = "+vm)
-        print ("# VM nets= "+vm['networks'])
-        print ("# VM name= "+vm['name'])
-        print ("# VM DS= "+vm['datastore'])
         name = vm['name']
-        datastore = vm['datastore']
         networks = ' '.join(vm['networks'])
-
-        os.system('./vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ '--datastore ' +datastore+' --network '+networks+' --autovif --name '+name)
-
+        print ("# Starting VM \'"+name+"\'")
+        print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+'./vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ '--datastore ' +datastore+' --network '+networks+' --autovif --name '+name)
+        
+        res = os.system('./vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ '--datastore ' +datastore+' --network '+networks+' --autovif --name '+name)
+        if res == 0:
+            print("## "+bcolors.OKGREEN+"SUCCESS "+bcolors.ENDC+"=> VM \'"+name+"\' migrated")
+        else:
+            print("## "+bcolors.FAIL+"FAIL "+bcolors.ENDC+"=> Error while migrating VM \'"+name+"\'")
 
 if __name__ == "__main__":
     main()
