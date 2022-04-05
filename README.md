@@ -39,7 +39,7 @@ NSX v2t Custom toolbox
   ```
   
 ## Tool get VMInstanceId
-*Note: getVMInstanceId.py script based on this work = https://github.com/dixonly/samples*
+*Note: getVMInstanceId.py script based on this repo = https://github.com/dixonly/samples*
 
 - usage: `usage: python3 main_getVMInstanceId.py [--help] [--input|-i </path/file.yml>]`
 - objective: Run VMs GET VM UUIDs API call according to input file arguments. 
@@ -67,7 +67,7 @@ NSX v2t Custom toolbox
   ```
   
  ## Tool vMotion VMs via API
-*Note: vmotion.py script based on this work = https://github.com/dixonly/samples*
+*Note: vmotion.py script based on this repo = https://github.com/dixonly/samples*
 
 - usage: `usage: python3 main_vmotion.py [--help] [--input|-i </path/file.yml>]`
 - objective: Run VMs vMotion API call according to input file arguments in v2t context (to connect VM to the correct destination logical port). 
