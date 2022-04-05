@@ -6,7 +6,7 @@
 # Python3 (Tested : 3.8.12)
 # Python 3rd party module = yaml
 # Python module : argparse, getpass, os
-# pip3 install yaml
+# pip3 install pyyaml
 # API access to vCenter (Source + Destination). Same user/password to login to vCenters
 
 
@@ -34,7 +34,7 @@ def print_help():
     print ("")
     print ("optional arguments:")
     print ("  --help, -h \t\t\t\tshow this help message and exit")
-    print ("  --input, -i </path/file.yml> \t\tPath to YAML config file (Default=v2t-dfw-export-version.yml)")
+    print ("  --input, -i </path/file.yml> \t\tPath to YAML config file (Default=input.yml)")
     print ("")
 
 def main():
