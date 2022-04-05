@@ -1,6 +1,11 @@
 # v2t-toolbox
 NSX v2t Custom toolbox
 
+- [Tool DFW Export version](#tool-dfw-export-version)
+- [Tool NSX-v IPSet](#tool-nsx-v-ipset)
+- [Tool get VMInstanceId](#tool-get-vminstanceid)
+- [Tool vMotion VMs via API](#tool-vmotion-vms-via-api)
+
 >**WARNING**: Experimental ! Use with *CAUTION*.
 
 ## Tool DFW Export version
