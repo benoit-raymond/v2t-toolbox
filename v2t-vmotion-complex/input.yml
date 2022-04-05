@@ -1,0 +1,17 @@
+# list => list of VMs to move in this wave. MANDATORY
+list:
+  - vm:
+    networks: [VLAN1, VLAN3]
+    datastore: DS01
+    name: VM1
+  - vm:
+    networks: [VLAN2, VLAN3]
+    name: VM2
+# src_vcenter => FQDN/IP Source vCenter. MANDATORY
+src_vcenter: vc-l-01a.corp.local
+# user => FQDN/IP user vCenter. MANDATORY
+user: administrator@vsphere.local
+# dst_vcenter => FQDN/IP Destination vCenter. MANDATORY
+dst_vcenter: vc-l-01a.corp.local
+# cluster => ESXi destination Cluster name. MANDATORY
+cluster: CLS01A
