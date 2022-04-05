@@ -70,13 +70,15 @@ def main():
         name = vm['name']
         networks = ' '.join(vm['networks'])
         print ("# Starting VM \'"+name+"\'")
-        print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+'./vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ '--datastore ' +datastore+' --network '+networks+' --autovif --name '+name)
+        command = 'python3 vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ ' --datastore ' +datastore+' --network '+networks+' --autovif --name '+name
+        print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+ command)
         
-        res = os.system('./vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ '--datastore ' +datastore+' --network '+networks+' --autovif --name '+name)
-        if res == 0:
-            print("## "+bcolors.OKGREEN+"SUCCESS "+bcolors.ENDC+"=> VM \'"+name+"\' migrated")
-        else:
-            print("## "+bcolors.FAIL+"FAIL "+bcolors.ENDC+"=> Error while migrating VM \'"+name+"\'")
+        res = os.system(command)
+        # TODO Handle error in execution
+        # if res == 0:
+        #     print("## "+bcolors.OKGREEN+"SUCCESS "+bcolors.ENDC+"=> VM \'"+name+"\' migrated")
+        # else:
+        #     print("## "+bcolors.FAIL+"FAIL "+bcolors.ENDC+"=> Error while migrating VM \'"+name+"\'")
 
 if __name__ == "__main__":
     main()

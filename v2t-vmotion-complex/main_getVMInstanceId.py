@@ -67,7 +67,7 @@ def main():
     for vms in vm_list:
         vms = ' '.join(vms)
         print ("# Starting GET UUID for VM(s): \'"+vms+"\'")
-        command = 'python3.8 ./getVMInstanceId.py --sourcevc '+src_vcenter+' --user '+user+' -p '+password+' --name '+vms
+        command = 'python3 ./getVMInstanceId.py --sourcevc '+src_vcenter+' --user '+user+' -p '+password+' --name '+vms
         print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+ command)
         
         # launch python script to retrieve uuids and JSON body for PRE-MIGRATE call
