@@ -37,3 +37,68 @@ NSX v2t Custom toolbox
   # scope => NSX-v scope (default NSX-v = globalroot-0). MANDATORY
   scope: "globalroot-0"
   ```
+  
+## Tool get VMInstanceId
+*Note: getVMInstanceId.py script based on this work = https://github.com/dixonly/samples*
+
+- usage: `usage: python3 main_getVMInstanceId.py [--help] [--input|-i </path/file.yml>]`
+- objective: Run VMs GET VM UUIDs API call according to input file arguments. 
+  - Input file can be multiple list of VMs to create several VM Group
+- Prerequisistes:
+  - Python3 (tested with Pyhton3.8+)
+  - Python module: pyVim, pyYaml, pyVomi. Installation:`pip3 install xxx`
+  - API access to vCenter
+- Example yaml file `input_vm_uuid.yml`:
+  ```
+  # list of list of VM names to get uuids. MANDATORY
+  vms:
+    - 
+      - APP02-P-VM01
+      - APP01-WEB02
+    - 
+      - APP01-APP01
+      - APP01-DB01
+    - 
+      - APP01-WEB01
+  # src_vcenter => FQDN/IP Source vCenter. MANDATORY
+  src_vcenter: vc-l-01a.corp.local
+  # user => FQDN/IP user vCenter. MANDATORY
+  user: administrator@vsphere.local
+  ```
+  
+ ## Tool vMotion VMs via API
+*Note: vmotion.py script based on this work = https://github.com/dixonly/samples*
+
+- usage: `usage: python3 main_vmotion.py [--help] [--input|-i </path/file.yml>]`
+- objective: Run VMs vMotion API call according to input file arguments in v2t context (to connect VM to the correct destination logical port). 
+  - You must run the Pre-Migrate API Call in NSX-T before running the script for this VM group
+  - You must run the Post-Migrate API Call in NSX-T after running the script for this VM group, to apply tags etc.
+- Prerequisistes:
+  - Python3 (tested with Pyhton3.8+)
+  - Python module: pyVim, pyYaml, pyVomi, pyOpenSSL. Installation:`pip3 install xxx`
+  - API access to vCenter (Source and destination using same SSO user)
+  - VM of the same group must have the same target ESXi cluster and Datastore
+- Example yaml file `input.yml`:
+  ```
+  # list => list of VMs to move in this wave. MANDATORY
+  list:
+  # List of vm
+  - vm:
+    # networks => List of Destination network, must match number of VM vNICs in VM's HW ordering
+    networks: [VLAN1, VLAN3]
+    # name => VM name
+    name: VM1
+  - vm:
+    networks: [VLAN2, VLAN3]
+    name: VM2
+  # src_vcenter => FQDN/IP Source vCenter. MANDATORY
+  src_vcenter: vc-l-01a.corp.local
+  # user => FQDN/IP user vCenter. MANDATORY
+  user: administrator@vsphere.local
+  # dst_vcenter => FQDN/IP Destination vCenter. MANDATORY
+  dst_vcenter: vc-l-01a.corp.local
+  # cluster => ESXi destination Cluster name. OPTION
+  cluster: CLS01A
+  # datastore => Datastore destination Cluster name. MANDATORY
+  datastore: DS01
+  ```
