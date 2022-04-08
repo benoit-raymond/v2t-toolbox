@@ -83,7 +83,7 @@ def getObjects(inv, vimtype, names, glob=False, ignorecase=False, verbose=False)
     return found
 
 def main():
-    print("This script is not supported by VMware.  Use at your own risk")
+    #print("This script is not supported by VMware.  Use at your own risk")
     args = parseParameters()
     password = args.password
     if hasattr(ssl, 'SSLContext'):
@@ -97,7 +97,7 @@ def main():
         print("Could not connect to vcenter: %s " %args.sourcevc)
         return -1
     else:
-        print("Connect to vcenter: %s" %args.sourcevc)
+        #print("Connect to vcenter: %s" %args.sourcevc)
         atexit.register(connect.Disconnect, si)
 
     vms = getObjects(inv = si.RetrieveContent(),

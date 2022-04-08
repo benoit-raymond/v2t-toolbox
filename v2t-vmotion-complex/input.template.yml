@@ -1,0 +1,66 @@
+# INPUT file parameter to run script main_migrateAllSteps.py
+##############################
+## YAML Structure example   ##
+##############################
+# # nsxt => FQDN/IP NSX-T Mgr. MANDATORY
+# nsxt: nsx-l-01a.corp.local
+# # nsxt_user => user NSX-T Mgr. MANDATORY
+# nsxt_user: admin
+# # src_vcenter => FQDN/IP Source vCenter. MANDATORY
+# src_vcenter: vc-l-01a.corp.local
+# # vc_user => user vCenter. MANDATORY (Same user for vCenter SRC & DST)
+# vc_user: administrator@vsphere.local
+# # dst_vcenter => FQDN/IP Destination vCenter. OPTIONNAL
+# #dst_vcenter: vc-l-01a.corp.local
+# # cluster => ESXi destination Cluster name. MANDATORY
+# cluster: Cluster-01a
+# # datastore => Datastore destination name. MANDATORY
+# datastore: datastore-01a
+# # group-id => Name of VM group ID. OPTIONNAL
+# #group-id: app001
+# # vms => list of VM to migrate using vmotion script. MANDATORY (min length >= 1)
+# vms:
+#   # vm => Object List of 3 attributes: name and networks -MANDATORY- + host -OPTIONNAL-
+#   - vm:
+#     # name => VM name. MANDATORY
+#     name: v2t-vm01
+#     # networks => VM list of network. MANDATORY (min length >= 1) AND MUST respect vNIC order.
+#     networks: [LS_APP-V-01]
+#     # host: Destination ESXi host. OPTIONNAL (required if DRS not enabled)
+#     host: esx-01a.corp.local
+#   - vm:
+#     name: v2t-vm02
+#     networks: [LS_APP-V-01]
+#     host: esx-02a.corp.local
+###############################
+
+# nsxt => FQDN/IP NSX-T Mgr. MANDATORY
+nsxt: nsx-l-01a.corp.local
+# nsxt_user => user NSX-T Mgr. MANDATORY
+nsxt_user: admin
+# src_vcenter => FQDN/IP Source vCenter. MANDATORY
+src_vcenter: vc-l-01a.corp.local
+# vc_user => user vCenter. MANDATORY
+vc_user: administrator@vsphere.local
+# dst_vcenter => FQDN/IP Destination vCenter. OPTIONNAL
+#dst_vcenter: vc-l-01a.corp.local
+# cluster => ESXi destination Cluster name. MANDATORY
+cluster: Cluster-01a
+# datastore => Datastore destination name. MANDATORY
+datastore: datastore-01a
+# group-id => Name of VM group ID. OPTIONNAL
+#group-id: app001
+# vms => list of VM to migrate using vmotion script. MANDATORY (min length >= 1)
+vms:
+  # vm => List 2 attributes: name and networks. MANDATORY
+  - vm:
+    # name => VM name. MANDATORY
+    name: v2t-vm01
+    # networks => VM list of network. MANDATORY (min length >= 1)
+    networks: [LS_APP-V-01]
+    # host: Destination ESXi host. OPTIONNAL (required if DRS not enabled)
+    host: esx-01a.corp.local
+  - vm:
+    name: v2t-vm02
+    networks: [LS_APP-V-01]
+    host: esx-02a.corp.local

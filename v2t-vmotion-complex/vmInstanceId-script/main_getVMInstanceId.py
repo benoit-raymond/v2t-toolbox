@@ -34,14 +34,14 @@ def print_help():
     print ("")
     print ("optional arguments:")
     print ("  --help, -h \t\t\t\tshow this help message and exit")
-    print ("  --input, -i </path/file.yml> \t\tPath to YAML config file (Default=input_vm_uuid.yml)")
+    print ("  --input, -i </path/file.yml> \t\tPath to YAML config file (Default=input.yml)")
     print ("")
 
 def main():
     # Analyze CLI Args
     parser = argparse.ArgumentParser(description='main_getVMInstanceId', add_help=False)
     parser.add_argument('--help', '-h', required=False, action='store_true', help='Display command help')
-    parser.add_argument('--input', '-i', required=False, help='Path to input yaml file (Default=input_vm_uuid.yml)', default="input_vm_uuid.yml")
+    parser.add_argument('--input', '-i', required=False, help='Path to input yaml file (Default=input.yml)', default="input.yml")
     args = parser.parse_args()
     if  args.help == True:
         print_help()

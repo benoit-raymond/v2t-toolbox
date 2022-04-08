@@ -8,8 +8,7 @@ vms:
     - APP01-DB01
   - 
     - APP01-WEB01
-
 # src_vcenter => FQDN/IP Source vCenter. MANDATORY
 src_vcenter: vc-l-01a.corp.local
-# user => FQDN/IP user vCenter. MANDATORY
+# user => user vCenter. MANDATORY
 user: administrator@vsphere.local

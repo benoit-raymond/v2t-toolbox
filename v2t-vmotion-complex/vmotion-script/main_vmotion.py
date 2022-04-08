@@ -68,17 +68,18 @@ def main():
     vm_list = input_yaml['list']
     for vm in vm_list:
         name = vm['name']
+        print ("# Starting vMotion VM \'"+name+"\'")
         networks = ' '.join(vm['networks'])
-        print ("# Starting VM \'"+name+"\'")
+
         command = 'python3 vmotion.py --sourcevc '+src_vcenter+' --destvc '+dst_vcenter+' --user '+user+' --password '+password+' --cluster '+cluster+ ' --datastore ' +datastore+' --network '+networks+' --autovif --name '+name
-        print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+ command)
+        # If optionnal paremeter Host
+        if 'host' in vm:
+            host = vm['host']
+            command = command + ' --server '+host
         
+        print ("## "+bcolors.OKBLUE+"DEBUG Command = "+bcolors.ENDC+ command)
+        # Launch vmotion python script
         res = os.system(command)
-        # TODO Handle error in execution
-        # if res == 0:
-        #     print("## "+bcolors.OKGREEN+"SUCCESS "+bcolors.ENDC+"=> VM \'"+name+"\' migrated")
-        # else:
-        #     print("## "+bcolors.FAIL+"FAIL "+bcolors.ENDC+"=> Error while migrating VM \'"+name+"\'")
 
 if __name__ == "__main__":
     main()
