@@ -49,7 +49,8 @@ NSX v2t Custom toolbox - Lift-Shift Migrate workload VMs Complex Case
 
 - Output script sample :
   <details>
-    <summary>Click to expand sample</summary>
+    <summary>Click to expand code</summary>
+  
     ```
     # python3 main_migrateAllSteps.py -i input.template.yml 
     vCenter user: administrator@vsphere.local
@@ -95,10 +96,12 @@ NSX v2t Custom toolbox - Lift-Shift Migrate workload VMs Complex Case
     <Response [200]>
 
     ```
+      
   </details>
   
 ## Tool get VMInstanceId
-** Sub-Folder = `vmInstanceId-script` **
+**Sub-Folder = `vmInstanceId-script`**
+      
 *Note: getVMInstanceId.py script based on this repo = https://github.com/dixonly/samples*
 
 - usage: `usage: python3 main_getVMInstanceId.py [--help] [--input|-i </path/file.yml>]`
@@ -127,7 +130,8 @@ NSX v2t Custom toolbox - Lift-Shift Migrate workload VMs Complex Case
   ```
 - Output script sample :
   <details>
-    <summary>Click to expand sample</summary>
+    <summary>Click to expand code</summary>
+    
     ```
     # python3 main_getVMInstanceId.py -i input.template.yml 
     user: administrator@vsphere.local
@@ -147,10 +151,12 @@ NSX v2t Custom toolbox - Lift-Shift Migrate workload VMs Complex Case
     }
     ## SUCCESS => GET uuid VMs 'APP02-P-VM01 APP01-WEB02'
     ```
+    
   </details>
   
 ## Tool vMotion VMs via API
-** Sub-Folder = `vmotion-script` **
+**Sub-Folder = `vmotion-script`**
+  
 *Note: vmotion.py script based on this repo = https://github.com/dixonly/samples*
 
 - usage: `usage: python3 main_vmotion.py [--help] [--input|-i </path/file.yml>]`
@@ -192,7 +198,8 @@ NSX v2t Custom toolbox - Lift-Shift Migrate workload VMs Complex Case
 
 - Output script sample :
   <details>
-    <summary>Click to expand sample</summary>
+    <summary>Click to expand code</summary>
+  
     ```
     python3 main_vmotion.py -i input.template.yml
     user: administrator@vsphere.local
