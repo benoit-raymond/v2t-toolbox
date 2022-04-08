@@ -12,7 +12,7 @@ NSX v2t Custom toolbox
 >**WARNING**: Experimental ! Use with *CAUTION*.
 
 ## Tool DFW Export version
-** Sub-Folder = `v2t-dfw-export-version` **
+**Sub-Folder = `v2t-dfw-export-version`**
 - usage: `python3 v2t-dfw-export-version.py [--help] [--set|-s] [--input|-i </path/file.yml>]`
 - objective: Check ESXi hosts DFW Export version is set to 1000. Default mode is check-only. Use --set option to set DFW export version to 1000. 
   - DFW export version = 1000 : Mandatory in case of Lift-Shift Migration using vMotion or In-Place using Maintenance Mode scenario.
@@ -31,7 +31,7 @@ NSX v2t Custom toolbox
   ```
 
 ## Tool NSX-v IPSet
-** Sub-Folder = `v2t-add-ipsets-v` **
+**Sub-Folder = `v2t-add-ipsets-v`**
 - usage: `python3 v2t-add-ipsets-v.py [--help] [--input|-i </path/file.yml>]`
 - objective: Add NSX-v a new IPSet to each Security Group with the IP of effective members.
 - Prerequisistes:
@@ -49,7 +49,7 @@ NSX v2t Custom toolbox
   ```
 
 ## Tool v2t lift-shift migration workload complex
-** Sub-Folder = `v2t-vmotion-complex` **
+**Sub-Folder = `v2t-vmotion-complex`**
 
 For usage detail go to [v2t-vmotion-complex README file](v2t-vmotion-complex/README.md)
 
