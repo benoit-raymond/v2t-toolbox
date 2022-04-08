@@ -3,7 +3,7 @@ NSX v2t Custom toolbox
 
 - [Tool DFW Export version](#tool-dfw-export-version)
 - [Tool NSX-v IPSet](#tool-nsx-v-ipset)
-- [Tool v2t Migrate Workload Complex VMs via API](v2t-vmotion-complex/README.md)
+- [Tool v2t Migrate Workload Complex VMs via API](#tool-v2t-lift-shift-migration-workload-complex)
   - [Tool migrate workload VMs complex](v2t-vmotion-complex/README.md#Tool-v2t-lift-shift-migration-workload-complex)
   - [Tool get VMInstanceId](v2t-vmotion-complex/README.md#tool-get-vminstanceid)
   - [Tool vMotion VMs via API](v2t-vmotion-complex/README.md#tool-vmotion-vms-via-api)
@@ -51,7 +51,7 @@ NSX v2t Custom toolbox
 ## Tool v2t lift-shift migration workload complex
 **Sub-Folder = `v2t-vmotion-complex`**
 
-For usage detail go to [v2t-vmotion-complex README file](v2t-vmotion-complex/README.md)
+For usage detail go to: [v2t-vmotion-complex README file](v2t-vmotion-complex/README.md)
 
   - [Tool migrate workload VMs complex](v2t-vmotion-complex/README.md#Tool-v2t-lift-shift-migration-workload-complex)
   - [Tool get VMInstanceId](v2t-vmotion-complex/README.md#tool-get-vminstanceid)
