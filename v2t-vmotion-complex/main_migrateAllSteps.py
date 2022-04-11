@@ -84,11 +84,9 @@ def main():
     
     # Ask user password
     print ("vCenter user: "+vc_user)
-    #vc_password = getpass()
-    vc_password = "VMware1!"
+    vc_password = getpass()
     print ("NSX-T user: "+nsxt_user)
-    #nsxt_password = getpass()
-    nsxt_password = "VMware1!VMware1!"
+    nsxt_password = getpass()
     print ("\n")
 
     # Disable HTTPS Cert warnings
